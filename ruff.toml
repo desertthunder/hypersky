@@ -75,6 +75,8 @@ docstring-code-line-length = "dynamic"
 "**/migrations/*.py" = ["D101", "E501"]
 "manage.py" = ["ANN"]
 "settings.py" = ["E501"]
+"apps/**/apps.py" = ["D"]
+"apps/**/admin.py" = ["D"]
 
 [lint.pydocstyle]
 convention = "google"

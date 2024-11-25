@@ -11,6 +11,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@egoist/tailwindcss-icons": "^1.8.1",
+    "@iconify-json/lucide": "^1.2.15",
+    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.15",
     "tailwindcss": "^3.4.15"
+  },
+  "dependencies": {
+    "@iconify-json/ri": "^1.2.3"
   }
 }

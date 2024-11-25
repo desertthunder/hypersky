@@ -1,0 +1,74 @@
+{% extends 'base.dj' %}
+
+{% block content %}
+  <header class="bg-primary text-white p-6">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-4 text-3xl font-bold">
+        <i class="i-ri-bluesky-line"></i>
+        <h1>Hypersky</h1>
+      </div>
+      <nav>
+        <ul class="flex gap-6">
+          <li>
+            <a href="#pricing" class="hover:text-secondary-light">Github</a>
+          </li>
+          <li>
+            <a href="#features" class="hover:text-secondary-light">Login</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="bg-surface py-16">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold text-neutral-dark">Your Gateway to BlueSky</h2>
+      <p class="mt-4 text-neutral">Experience seamless connectivity, advanced scheduling, and a custom interface.</p>
+      <button class="mt-6 bg-primary hover:bg-primary-dark text-white py-3 px-6 rounded-lg">Get Started Now</button>
+    </div>
+  </section>
+
+  <section id="features" class="py-16 bg-background">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center text-neutral-dark">Features</h2>
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div>
+          <i class="i-lucide-sun text-primary text-6xl"></i>
+          <h3 class="text-xl font-semibold mt-4 text-neutral-dark">Customizable Themes</h3>
+          <p class="mt-2 text-neutral">Tailor your experience with light, dark, and vibrant themes.</p>
+        </div>
+        <div>
+          <i class="i-lucide-clock text-secondary text-6xl"></i>
+          <h3 class="text-xl font-semibold mt-4 text-neutral-dark">Advanced Scheduling</h3>
+          <p class="mt-2 text-neutral">Schedule posts with precision and never miss an opportunity.</p>
+        </div>
+        <div>
+          <i class="i-lucide-message-circle text-accent text-6xl"></i>
+          <h3 class="text-xl font-semibold mt-4 text-neutral-dark">Real-Time Interactions</h3>
+          <p class="mt-2 text-neutral">Engage with followers instantly with real-time updates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-surface">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-neutral-dark">Get in Touch</h2>
+      <p class="mt-4 text-neutral">Have questions? Reach out to us!</p>
+      <form class="mt-8 max-w-md mx-auto">
+        <input type="text" placeholder="Your Name" class="w-full mb-4 p-3 border border-neutral rounded-lg" />
+        <input type="email" placeholder="Your Email" class="w-full mb-4 p-3 border border-neutral rounded-lg" />
+        <textarea placeholder="Your Message" class="w-full mb-4 p-3 border border-neutral rounded-lg"></textarea>
+        <button class="bg-primary text-white py-2 px-4 rounded-lg w-full">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-dark text-white py-6">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Hypersky. All rights reserved.</p>
+    </div>
+  </footer>
+{% endblock %}

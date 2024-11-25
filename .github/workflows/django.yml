@@ -1,0 +1,61 @@
+name: Test CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: test_db
+        options: >-
+          --health-cmd="pg_isready -U postgres"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12.3
+      - name: Install Poetry
+        run: pip install poetry
+      - name: Create requirements.txt from poetry.lock with dev dependencies
+        run: poetry export -f requirements.txt --output requirements.txt --without-hashes
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+      - name: Set up Environment Variables
+        run: |
+          echo "PGHOST=localhost" >> .env
+          echo "PGPORT=5432" >> .env
+          echo "PGUSER=postgres" >> .env
+          echo "PGPASSWORD=postgres" >> .env
+          echo "PGDATABASE=test_db" >> .env
+        env:
+          PGHOST: localhost
+          PGPORT: 5432
+          PGUSER: postgres
+          PGPASSWORD: postgres
+          PGDATABASE: test_db
+      - name: Run Migrations
+        run: python manage.py migrate
+      - name: Run Tests
+        run: python manage.py test
+      - name: Generate Coverage Report
+        run: |
+          coverage run --source='.' manage.py test
+          coverage report
+          coverage xml
