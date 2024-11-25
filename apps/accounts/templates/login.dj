@@ -1,0 +1,30 @@
+{% extends 'base.dj' %}
+
+{% block content %}
+  <div class="flex-1 flex items-center justify-center">
+    <div class="w-full max-w-md bg-surface shadow-md rounded-lg p-6 flex flex-col gap-4">
+      <h2 class="text-2xl font-semibold text-center mb-6 border-b text-neutral p-4 pt-0">Login</h2>
+      <form method="post" action="" class="flex-1 flex flex-col gap-4">
+        {% csrf_token %}
+
+        <label for="handle" class="block text-neutral mb-2">Handle</label>
+        <input type="text" name="handle" id="handle" class="w-full bg-surface-light border border-neutral py-2 px-4 rounded-lg focus:outline-none focus:border-primary" required />
+        {% if form.errors.email %}
+          <p class="text-red-500 text-sm mt-1">{{ form.errors.handle.0 }}</p>
+        {% endif %}
+
+        <label for="password" class="block text-neutral mt-4 mb-2">Password</label>
+        <input type="password" name="password" id="password" class="w-full bg-surface-light border border-neutral py-2 px-4 rounded-lg focus:outline-none focus:border-primary" required />
+        {% if form.errors.password %}
+          <p class="text-red-500 text-sm mt-1">{{ form.errors.password.0 }}</p>
+        {% endif %}
+
+        <button type="submit" class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary-dark">Login</button>
+      </form>
+
+      <p class="text-center text-neutral mt-4">
+        Don't have an account? <a href="{% url 'register' %}" class="text-primary">Register</a>
+      </p>
+    </div>
+  </div>
+{% endblock %}

@@ -9,7 +9,8 @@
     <script src="{% static 'js/vendor/htmx.js' %}"></script>
     <script src="{% static 'js/vendor/alpine.js' %}" defer></script>
 </head>
-<body class="bg-background text-neutral-light">
+<body class="bg-background text-neutral-light min-h-full flex flex-col gap-4">
+    {% include 'partials/nav.dj' %}
     {% block content %}
     {% endblock content %}
     <script src="{% static 'js/index.js' %}"></script>

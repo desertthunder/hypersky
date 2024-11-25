@@ -1,25 +1,6 @@
 {% extends 'base.dj' %}
 
 {% block content %}
-  <header class="bg-primary text-white p-6">
-    <div class="container mx-auto flex justify-between items-center">
-      <div class="flex items-center gap-4 text-3xl font-bold">
-        <i class="i-ri-bluesky-line"></i>
-        <h1>Hypersky</h1>
-      </div>
-      <nav>
-        <ul class="flex gap-6">
-          <li>
-            <a href="#pricing" class="hover:text-secondary-light">Github</a>
-          </li>
-          <li>
-            <a href="#features" class="hover:text-secondary-light">Login</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
   <section class="bg-surface py-16">
     <div class="container mx-auto text-center">
       <h2 class="text-4xl font-bold text-neutral-dark">Your Gateway to BlueSky</h2>

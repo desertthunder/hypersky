@@ -32,8 +32,8 @@ class Account(AbstractBaseUser, PermissionsMixin, UUIDModel):
 
     email = models.EmailField(unique=True)
     handle = models.CharField(max_length=40, unique=True)
-    token = models.CharField(max_length=255, blank=True)
-    password = models.CharField(max_length=255, help_text="App password")
+    access_token = models.CharField(max_length=255, blank=True)
+    refresh_token = models.CharField(max_length=255, blank=True)
 
     date_joined = models.DateTimeField(auto_now_add=True)
     last_login = models.DateTimeField(auto_now=True)
@@ -45,4 +45,4 @@ class Account(AbstractBaseUser, PermissionsMixin, UUIDModel):
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["handle"]
 
-    objects = BaseUserManager()
+    objects: models.Manager["Account"] = BaseUserManager()
