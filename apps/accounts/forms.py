@@ -54,5 +54,6 @@ class CustomUserCreationForm(forms.Form):
                 logger.info(f"User already exists: {account.id}")
         except httpx.HTTPStatusError as exc:
             data = exc.response.json()
-            logger.error(f"Error creating user: {json.dumps(data, indent=2)}")
+            if isinstance(data, dict):
+                logger.error(f"Error creating user: {json.dumps(data, indent=2)}")
             raise forms.ValidationError(data) from exc

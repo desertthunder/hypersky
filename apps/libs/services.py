@@ -156,7 +156,9 @@ class BlueSkyService:
         )
 
         if resp.is_error:
-            logger.error(f"Error: {resp.text} | Status Code: {resp.status_code}")
+            logger.error(
+                f"Request to {url} failed: {resp.text} with status {resp.status_code}"
+            )
             resp.raise_for_status()
 
         data = resp.json()
