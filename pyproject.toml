@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "hypersky"
+version = "0.1.0"
+description = ""
+authors = ["Owais Jamil <desertthunder.dev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.3"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.8.0"
+mypy = "^1.13.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

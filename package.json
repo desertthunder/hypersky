@@ -1,0 +1,16 @@
+{
+  "name": "hypersky",
+  "version": "1.0.0",
+  "description": "",
+  "main": "static/js/index.js",
+  "scripts": {
+    "css:watch": "tailwindcss -i ./static/css/base.css -o ./static/css/styles.css --watch",
+    "css:build": "tailwindcss -i ./static/css/base.css -o ./static/css/styles.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.15"
+  }
+}
