@@ -21,10 +21,6 @@
 
         <button type="submit" class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary-dark">Login</button>
       </form>
-
-      <p class="text-center text-neutral mt-4">
-        Don't have an account? <a href="{% url 'register' %}" class="text-primary">Register</a>
-      </p>
     </div>
   </div>
 {% endblock %}

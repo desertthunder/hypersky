@@ -10,10 +10,7 @@
           <a href="#pricing" class="hover:text-secondary-light">Github</a>
         </li>
         <li>
-            <a href="{% url 'login' %}" class="hover:text-secondary-light">Login</a>
-        </li>
-        <li>
-          <a href="{% url 'register' %}" class="hover:text-secondary-light">Signup</a>
+          <a href="{% url 'login' %}" class="hover:text-secondary-light">Login</a>
         </li>
       </ul>
     </nav>

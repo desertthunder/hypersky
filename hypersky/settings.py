@@ -49,6 +49,8 @@ MIDDLEWARE = [
     "django_htmx.middleware.HtmxMiddleware",
 ]
 
+AUTHENTICATION_BACKENDS = ["apps.libs.authentication.BlueSkyJWTBackend"]
+
 ROOT_URLCONF = "hypersky.urls"
 
 TEMPLATES = [

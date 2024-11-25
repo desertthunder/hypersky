@@ -1,13 +1,10 @@
 """URL Patterns for Static Pages."""
 
 from django.urls import path
-from django.views.generic import TemplateView
 
+from apps.pages.views import AppView, HomePageView
 
-class HomePageView(TemplateView):
-    """Home Page View."""
-
-    template_name = "home.dj"
-
-
-urlpatterns = [path("", HomePageView.as_view(), name="home")]
+urlpatterns = [
+    path("app/", AppView.as_view(), name="app"),
+    path("", HomePageView.as_view(), name="home"),
+]
